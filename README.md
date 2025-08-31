@@ -186,3 +186,43 @@ uvicorn app:app --reload
 ##### Conclusion and Value Proposition
 ***In summary, this project successfully transforms a simple machine learning script into a professional, self-documenting, and resilient web service. It encapsulates best practices for API design, including validation, error handling, logging, and system monitoring. The API is not only ready for integration into front-end applications but is also prepared for deployment in a cloud-native environment, providing a reliable and insightful tool for automating and supporting insurance premium assessment.***
 
+---
+
+## Before Improvement
+- This demo showcases the initial, minimal viable product (MVP). It was a simple Python script with a single function. The user had to manually prepare their data in the exact format the model expected, with no validation. The script would often crash with cryptic errors for invalid inputs. The output was just a plain text category (e.g., "High") with no context, no confidence score, and no explanation. It was a proof-of-concept that worked but was completely unsuitable for integration into any application or use by anyone other than the developer.
+----
+##### Key Characteristics of the "Before" State:
+- **No API**: Just a Python function in a script.
+- **No Validation**: Input errors caused crashes.
+- **No Explanation**: Output was just a category label.
+- **No Structure**: No standard way to send or receive data.
+- **Fragile**: Any unexpected input would break it.
+----
+###### Video Title: Insurance Predictor - Basic minimal viable product  Demo
+###### Video: 
+
+---
+## After Improvement (Production API)
+- This walkthrough demonstrates the fully featured, production-grade API. We start at the automatically generated Interactive Documentation (/docs), a hallmark of FastAPI, which allows users to test the API directly from their browser.
+
+   - 1) **Testing the Health Endpoint (/health)**: We first call the health check to see the system status, confirming the model is loaded and showing system metrics. This is crucial for DevOps and cloud deployment.
+
+   - 2) **Making a Prediction (/predict)**: We use the docs interface to send a structured JSON request. The video highlights:
+
+      - **Automatic Validation**: Trying to send an invalid city name or a negative age results in a clear, helpful error message instantly, without even touching the ML model.
+      - **Rich, Structured Response**: The response is not just a category. It includes the confidence score (e.g., 0.92), the probability breakdown for all categories, the model version used, and a list of identified risk factors (e.g., ["smoker", "senior_age"]).
+
+   - 3) **Demonstrating Robustness**: We show how the API gracefully handles edge cases, like a city not in the predefined list (it defaults to "Tier 3"), thanks to the comprehensive error handling and data validation layers.
+
+---
+##### Key Characteristics of the "After" State:
+
+- **Professional API**: Built with FastAPI, featuring auto-generated interactive documentation.
+- **Robust Validation**: Comprehensive input checking with clear error messages.
+- **Explainable AI**: Responses include confidence scores and risk factors.
+- **Production Ready**: Includes health checks, system monitoring, and version tracking.
+- **Developer & User Friendly**: Easy to understand, integrate, and use.
+
+###### Video Title: Insurance Predictor API - Production Ready Walkthrough
+###### Video:
+
