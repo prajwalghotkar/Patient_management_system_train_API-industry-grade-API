@@ -200,6 +200,8 @@ uvicorn app:app --reload
 ----
 ###### Video Title: Insurance Predictor - Basic minimal viable product  Demo
 ###### Video: 
+https://github.com/user-attachments/assets/c61ab74f-cecb-4bf1-aec0-59544962600c
+
 
 ---
 ## After Improvement (Production API)
@@ -225,4 +227,6 @@ uvicorn app:app --reload
 
 ###### Video Title: Insurance Predictor API - Production Ready Walkthrough
 ###### Video:
+https://github.com/user-attachments/assets/73832f15-7df3-4d1c-800e-ab6f60ea563d
+https://github.com/user-attachments/assets/13e3d714-732e-435a-a70a-5b3e37269357
 
