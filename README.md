@@ -4,14 +4,12 @@
 #### 🚀 Key Features
 
 ##### Core Functionality
---
 - **Premium Category Prediction**: Classifies users into Low/Medium/High premium categories
 - **Confidence Scoring**: Provides probability-based confidence levels (0.0-1.0)
 - **Risk Factor Analysis**: Identifies key contributors to premium decisions
 - **Real-time Predictions**: Instant API responses with structured data
 
 ##### Technical Excellence
---
 - ✅ **Production-Ready Architecture**: Modular design with separation of concerns
 - ✅ **Comprehensive Validation**: Pydantic models with custom field validators
 - ✅ **Health Monitoring**: System metrics and model status endpoints
@@ -19,7 +17,6 @@
 - ✅ **Version Management**: Model version tracking and traceability
 
 ##### 🛠️ Technical Stack
---
 - **Backend Framework**: FastAPI with Python 3.8+
 - **Machine Learning**: Scikit-learn with pre-trained model
 - **Validation**: Pydantic with custom validators
@@ -28,7 +25,7 @@
 - **Deployment**: Uvicorn ASGI server
 ---
 #### 📁 Project Structure
-
+```
 insurance-api/
 ├──> app.py                 # Main FastAPI application
 ├──> requirements.txt       # Python dependencies
@@ -41,21 +38,22 @@ insurance-api/
 │   └──> city_tier.py      # City classification system
 └──> model/
     └──> prajwalmodel.pkl  # Pre-trained ML model
-
+```
 ---
 #### 🔌 API Endpoints
---
+
 ##### 1. Home Endpoint (/)
-
+```
  GET /
-
+```
 - Welcome message and API information
 - Usage guidelines and endpoint overview
 - Purpose: Root endpoint for basic API discovery
---
-##### 2. Health Check Endpoint (/health)
-GET /health
 
+##### 2. Health Check Endpoint (/health)
+```
+GET /health
+```
 - **Machine-readable status**: System health monitoring
 - **Model status**: Loading state and version information
 - **System metrics**: CPU, memory, disk usage
@@ -63,15 +61,16 @@ GET /health
 - **Purpose**: Load balancer health checks and monitoring
 --
 ##### 3. Prediction Endpoint (/predict)
+```
 POST /predict
-
+```
 - **Input**: User demographic and health data
 - **Output**: Predicted premium category with confidence scores
 - **Features**: Risk factors, probability distribution, premium estimates
 - **Purpose**: Main prediction functionality
 ---
 #### 📊 Input Data Model
-
+```
 {
   "age": 35,
   "weight": 72.5,
@@ -81,7 +80,7 @@ POST /predict
   "city": "Mumbai",
   "occupation": "private_job"
 }
-
+```
 ##### Validation Features:
 - **Age**: 1-119 years with business logic checks
 - **City**: Automatic normalization and tier classification
@@ -90,7 +89,7 @@ POST /predict
 - **Income**: LPA (Lakhs Per Annum) validation
 ---
 #### 🎯 Output Response
-
+```
 {
   "predicted_category": "Medium",
   "confidence": 0.8432,
@@ -108,7 +107,7 @@ POST /predict
     "recommended": 22500
   }
 }
- 
+``` 
 ---
 #### 🌟 Advanced Features
 --
@@ -140,14 +139,17 @@ POST /predict
 ---
 ##### Development Setup
 ###### Install dependencies
+```
 pip install -r requirements.txt
-
+```
 ###### Run development server
+```
 uvicorn app:app --reload 
-
+```
+```
 # Access documentation
 # http://localhost:8000/docs
-
+```
 ---
 ##### API Endpoints and Production Readiness
 ###### The API exposes several well-defined endpoints crucial for both functionality and operational health:
@@ -182,5 +184,5 @@ uvicorn app:app --reload
 
 ---
 ##### Conclusion and Value Proposition
-- In summary, this project successfully transforms a simple machine learning script into a professional, self-documenting, and resilient web service. It encapsulates best practices for API design, including validation, error handling, logging, and system monitoring. The API is not only ready for integration into front-end applications but is also prepared for deployment in a cloud-native environment, providing a reliable and insightful tool for automating and supporting insurance premium assessment.
+***In summary, this project successfully transforms a simple machine learning script into a professional, self-documenting, and resilient web service. It encapsulates best practices for API design, including validation, error handling, logging, and system monitoring. The API is not only ready for integration into front-end applications but is also prepared for deployment in a cloud-native environment, providing a reliable and insightful tool for automating and supporting insurance premium assessment.***
 
